@@ -89,5 +89,18 @@ While it's possible to use a Vec to store unique items like IDs or URLs, it's no
 
 The Singleton pattern gives you a single, global instance but doesnt make data thread-safe. In Rust, thread safety is important, especially when multiple threads access shared data like SUBSCRIBERS. DashMap is a thread-safe map that allows safe concurrent access without manual locking. Even with a Singleton, you would still need DashMap or another thread-safe structure. So, using DashMap is still necessary in this case.
 #### Reflection Publisher-2
+1) In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+Separating Service and Repository from Model helps keep the codebase clean and well-organized. Each layer has a clear responsibility: models store data, services contain business logic, and repositories handle database interactions. This separation makes the code easier to understand, test, and maintain. It also makes it easier to scale the project without things getting messy.
+
+2) What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+If we rely only on the Model, each model ends up doing everything—managing data, handling logic, and accessing the database. This leads to messy, tightly coupled code that's harder to understand and maintain. Small changes in one model could easily break others. By separating responsibilities into services and repositories, we keep the code cleaner, more modular, and much easier to manage.
+
+3) Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Yes, I’ve used Postman to test my API endpoints—it’s a great way to quickly verify if everything works as expected. It’s a handy tool for both solo and team projects, especially when working with APIs.
+
+
 
 #### Reflection Publisher-3
